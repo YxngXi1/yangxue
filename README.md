@@ -1,2 +1,1 @@
-# yangxue
-idk bro it's kinda like a personal protfolio type shi
+Hey hey hey, this is a personal portfolio for moi. Please enjoy and leave feedback in my PO Box: 1234 urmom avenue
