@@ -78,3 +78,9 @@ h1 span:not(:hover) {
     display: block;
   }
 }
+
+.spline-scene {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

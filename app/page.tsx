@@ -1,6 +1,6 @@
 'use client'
 
-// import Object from "@/components/Object";
+import Spline from '@splinetool/react-spline/next';
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap';
@@ -140,7 +140,7 @@ export default function Home() {
               zIndex: 0,
             }}>
           </div>
-          <div className="w-10/12 mx-auto flex justify-center items-start my-auto">
+          <div className="w-10/12 mx-auto flex justify-center items-start my-auto flex-col lg:flex-row">
             <div 
               className="absolute bg-[#D9D9D9] blur-[100px] w-[625px] h-[55px]"
               data-aos="fade-in" data-aos-delay="1300" data-aos-duration="2000"
@@ -161,7 +161,7 @@ export default function Home() {
               </p>
             </div>  
             <div className="lg:w-5/12">
-              {/* <Object/> */}
+              <p>i need to put something in here eventually</p>
             </div>
           </div>
         </div>
