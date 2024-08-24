@@ -2,32 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes change-shadow {
+  0% {
+    text-shadow: 6px 6px 0px #528CFF;
+    letter-spacing: 6px;
+    transform: scale(1);
+  }
+  100% {
+    text-shadow: 
+      -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000,
+      -6px -6px 0px #FF5858, 
+      6px 6px 0px #528CFF;
+    transform: scale(1.1);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes reverse-change-shadow {
+  0% {
+    text-shadow: 
+      -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000,
+      -6px -6px 0px #FF5858, 
+      6px 6px 0px #528CFF;
+    transform: scale(1.1);
+  }
+  100% {
+    text-shadow: 6px 6px 0px #528CFF;
+    letter-spacing: 6px;
+    transform: scale(1);
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1 span {
+  display: inline-block;
+}
+
+h1 span:hover {
+  animation: change-shadow 0.3s forwards !important;
+  cursor: default;
+}
+
+h1 span:not(:hover) {
+  animation: reverse-change-shadow 0.6s forwards !important;
 }
