@@ -3,8 +3,12 @@
 // import Object from "@/components/Object";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from 'react'
+import { gsap } from 'gsap';
 
 export default function Home() {
+  const divRef1 = useRef(null);
+  const divRef2 = useRef(null);
+
   const [adjective, setAdjective] = useState<string | null>(null);
   const [displayedText, setDisplayedText] = useState<string>('');
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
@@ -77,12 +81,25 @@ export default function Home() {
     }
   }, [isDeleting]);
 
+  useEffect(() => {
+    gsap.fromTo(divRef1.current,
+      { clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)' },
+      { clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', duration: 2, delay: 1.2}
+    );
+
+    gsap.fromTo(divRef2.current,
+      { clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)' },
+      { clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', duration: 1.5, delay: 3}
+    );
+  }, []);
+
   return (
     <>
       <section className="bg-black flex justify-center items-center min-h-screen">
         <div className="container flex justify-center min-h-screen">
           <div 
             className="absolute"
+            ref={divRef1}
             style={{
               top: '20%',
               left: '20%',
@@ -99,6 +116,7 @@ export default function Home() {
           </div>
           <div 
             className="absolute"
+            ref={divRef2}
             style={{
               top: '70%',
               left: '60%',
@@ -113,21 +131,21 @@ export default function Home() {
               alt="dots"
             />
           </div>
-          <div 
-            className="absolute bg-[#D9D9D9] blur-[100px] w-[100px] h-[100px]"
+          <div data-aos="fade-down" data-aos-delay="3000" data-aos-duration="60000" 
+          className="absolute bg-[#D9D9D9] blur-[100px] w-[100px] h-[100px]"
             style={{
-              top: '90%',
+              top: '85%',
               left: '90%',
               transform: 'translate(-50%, -50%)',
               zIndex: 0,
-            }}
-          ></div>
+            }}>
+          </div>
           <div className="w-10/12 mx-auto flex justify-center items-start my-auto">
-            
             <div 
               className="absolute bg-[#D9D9D9] blur-[100px] w-[541px] h-[55px]"
+              data-aos="fade-in" data-aos-delay="1300" data-aos-duration="2000"
               style={{
-                top: '50%',
+                top: '47%',
                 left: '30%',
                 transform: 'translate(-50%, -50%)',
                 zIndex: 0,
@@ -135,10 +153,10 @@ export default function Home() {
             ></div>
             
             <div className="flex flex-col gap-y-6 text-left lg:w-7/12 w-11/12">
-              <h1 className="h-full w-full text-white text-8xl font-bold blue-box-shadow name gap-x-[2px] break-all-words text-wrap">
-                <div className="leading-wide"><span>Y</span><span>a</span><span>n</span><span>g</span>&nbsp;<span>X</span><span>u</span><span>e</span></div>
+              <h1 className="h-full w-full text-white text-8xl font-bold blue-box-shadow name gap-x-[2px] break-all-words text-wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <div className="leading-wide text-pretty"><span>Y</span><span>a</span><span>n</span><span>g</span>&nbsp;<span className="ml-[4px]">X</span><span>u</span><span>e</span></div>
               </h1>
-              <p className="text-white text-3xl font-light min-h-[60px]">
+              <p className="text-white text-3xl font-light min-h-[60px] text-balance" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                 <u id="adjectiveTyper" ref={adjectiveTyperRef}>{displayedText}</u> Full Stack Developer
               </p>
             </div>  
