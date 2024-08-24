@@ -2,12 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+}
+
+h1 span {
+  display: inline-block;
+  transition: text-shadow 0.3s ease;
+}
+
+.name:hover span {
+  text-shadow: 2px 2px 5px gray;
+}
+
+
+.name span:hover {
+  text-shadow: none; 
+  cursor: default;
 }
 
 @keyframes change-shadow {
@@ -46,15 +61,20 @@
   }
 }
 
-h1 span {
-  display: inline-block;
-}
-
 h1 span:hover {
   animation: change-shadow 0.3s forwards !important;
-  cursor: default;
 }
 
 h1 span:not(:hover) {
-  animation: reverse-change-shadow 0.6s forwards !important;
+  animation: reverse-change-shadow 0.6s forwards;
+}
+
+.name-part {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .name-part {
+    display: block;
+  }
 }
