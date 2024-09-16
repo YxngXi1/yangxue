@@ -42,11 +42,11 @@ const MyWork = () => {
       {/* Horizontal Scroll Section */}
       <div ref={horizontalRef} className="relative">
         {/* Sticky Heading */}
-        <h1 ref={headingRef} className='text-white text-7xl absolute text-center pt-8 top-0 w-full'>
+        <h1 ref={headingRef} className='text-white text-7xl text-center pt-8 top-0 w-full'>
           my work.
         </h1>
         
-        <div className="flex h-screen w-[300vw]">
+        <div className="flex h-[85vh] w-[300vw]">
           <div className="w-screen bg-black items-center justify-center grid grid-cols-2 text-black">
             <div className='flex justify-center items-center'>
               <div className='bg-[#D9D9D9] border w-7/12 p-10 flex flex-col justify-center items-center'>
@@ -62,13 +62,18 @@ const MyWork = () => {
                   </div>
               </div>
             </div>
-            <div className='flex flex-col justify-center items-center'>
-              <div className='bg-[#D9D9D9] border w-7/12 p-10 flex flex-col justify-center items-center'>
-                
+            <div className='flex flex-col justify-center items-center gap-y-40'>
+              <div className='bg-[#D9D9D9] border w-6/12 px-6 py-14 flex flex-col justify-center items-left text-left'>
+                <h2 className='text-4xl'>features</h2>
+                <ul className='text-left text-xl w-full flex flex-col gap-y-2 mt-8'>
+                    <li> - Login Integration</li>
+                    <li> - Dynamic Billboard</li>
+                    <li> - Trending Movies</li>
+                    <li> - Favorites</li>
+                    <li> - Movie Details</li>
+                </ul> 
               </div>
-              <div className='bg-white border h-20'>
-                asd
-              </div>
+              <button className='bg-[#d9d9d9] px-8 py-10 text-4xl'>Check it out &rarr;</button>
             </div>
           </div>
           <div className="w-screen bg-black flex items-center justify-center">
