@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <>
       <Hero/>
-      <AboutMe/>
+{/*       <AboutMe/>
       <MyWork/>
-      <Contact/>
+      <Contact/> */}
     </>
   );
 }
