@@ -5,7 +5,7 @@ const AboutMe = () => {
   return (
     <main className='bg-black text-white min-h-screen'>
         <h1 className='text-white text-7xl text-center mb-16 pt-8'>about me.</h1>
-        <div className='flex justify-center w-full'>
+        <div className='flex flex-col lg:flex-row justify-center w-full'>
 
 
             <div className="w-7/12 flex justify-center items-center relative">
@@ -21,8 +21,8 @@ const AboutMe = () => {
                     <Image
                         src="/gifs/badminton.gif"
                         alt="badminton"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: 'cover' }}
                     />
                 </div>
             </div>
